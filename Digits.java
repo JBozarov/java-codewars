@@ -1,19 +1,14 @@
-package com.katas;
+Determine the total number of digits in the integer (n>=0) given as input to the function. For example, 9 is a single digit, 66 has 
+2 digits and 128685 has 6 digits. Be careful to avoid overflows/underflows.
+
+All inputs will be valid.
 
 public class DecTools {
-    
-    public static void main(String[] args) {
-        Digits(63272637l);
-    }
-
-
-    public static int Digits(long n) {
-        String str = Long.toString(n);
-        String[] arr = str.split("");
-
-        for (int i = 0; i<arr.length; i++) {
-            System.out.println(arr[i]);
-        }
-        return 0;
+   
+    public class DecTools {
+       public static int Digits(long n) {
+          String str = Long.toString(n);
+          return str.length();
+      }
     }
 }
