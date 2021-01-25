@@ -1,26 +1,33 @@
 
 
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class DuplicateString {
-    public static String[] dup(String[] arr) {
 
-        List<String> names = Arrays.asList(arr).stream().collect(Collectors.toList());
-        System.out.println(Arrays.toString(names.toArray()));
+class Solution{    
+    
+      public static String[] dup(String[] arr) {
+        String[] result = new String[arr.length];
+        for ( int k = 0; k < arr.length; k++ ) {
+            List<String> stringList = Arrays.asList(arr[k].split("").clone());
+            List<String> newWord = new ArrayList<>();
 
-        int[] numbs = {1, 2, 3, 4, 5, 6, 7};
-        List<Integer> numbsList = Arrays.stream(numbs).boxed().collect(Collectors.toList());
+            for ( int i = 0; i < stringList.size() - 1; i++ ) {
+                if ( !stringList.get(i).equals(stringList.get(i+1)) && i != stringList.size() -1) {
+                    newWord.add(stringList.get(i));
+                }
+                if ( i == stringList.size() - 2 && stringList.get(i).equals(stringList.get(i+1)) ) {
+                    newWord.add(stringList.get(i+1));
+                }
 
-        char[] chars = {'A', 'B', 'C'};
-        List<Character> charsList = Arrays.asList(chars).stream().collect(Collectors.toList());
-        return arr;
+            }
+            String temp = String.join("", newWord);
+            result[k] = temp;
+
+        }
+        return result;
     }
-
-
-    public static void main(String[] args) {
-        String[] arg = {"kelless","keenness"};
-        System.out.println(dup(arg));
-    }
+  
 }
