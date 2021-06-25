@@ -1,4 +1,4 @@
-Consider the string "adfa" and the following rules:
+/* Consider the string "adfa" and the following rules:
 
 a) each character MUST be changed either to the one before or the one after in alphabet. 
 b) "a" can only be changed to "b" and "z" to "y". 
@@ -13,7 +13,7 @@ Here is another example:
 You will be given a lowercase string and your task is to return True if at least one of the outcomes is a palindrome or False otherwise.
 
 More examples in test cases. Good luck!
-
+*/ 
 
 
 
